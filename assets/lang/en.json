@@ -1,0 +1,9 @@
+[
+  {
+    "question": "What is the capital of France?",
+    "answer": "The capital of France is Paris.",
+    "buttons": ["Paris", "London", "Berlin", "Rome"],
+    "correct": 0,
+    "type": "1"
+  }
+]
