@@ -12,14 +12,30 @@ import path from 'path';
 import { app, BrowserWindow, shell, ipcMain } from 'electron';
 import { autoUpdater } from 'electron-updater';
 import log from 'electron-log';
-import MenuBuilder from './menu';
 import { resolveHtmlPath } from './util';
+import nodeCron from 'node-cron';
 
 class AppUpdater {
   constructor() {
     log.transports.file.level = 'info';
     autoUpdater.logger = log;
+
     autoUpdater.checkForUpdatesAndNotify();
+
+    autoUpdater.on('update-downloaded', (info) => {
+      autoUpdater.quitAndInstall();
+    });
+
+    nodeCron.schedule(
+      '5 * * *',
+      () => {
+        autoUpdater.checkForUpdatesAndNotify();
+      },
+      {
+        scheduled: true,
+        timezone: 'Europe/London',
+      }
+    );
   }
 }
 
@@ -74,12 +90,15 @@ const createWindow = async () => {
     width: 1024,
     height: 728,
     icon: getAssetPath('icon.png'),
+    autoHideMenuBar: true,
+    fullscreen: true,
     webPreferences: {
       preload: app.isPackaged
         ? path.join(__dirname, 'preload.js')
         : path.join(__dirname, '../../.erb/dll/preload.js'),
     },
   });
+  mainWindow.setMenu(null);
 
   mainWindow.loadURL(resolveHtmlPath('index.html'));
 
@@ -97,9 +116,6 @@ const createWindow = async () => {
   mainWindow.on('closed', () => {
     mainWindow = null;
   });
-
-  const menuBuilder = new MenuBuilder(mainWindow);
-  menuBuilder.buildMenu();
 
   // Open urls in the user's browser
   mainWindow.webContents.setWindowOpenHandler((edata) => {

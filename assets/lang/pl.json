@@ -1,0 +1,37 @@
+[
+  {
+    "question": "What is the capital of France?",
+    "answer": "The capital of France is Paris.",
+    "buttons": ["Paris", "London", "Berlin", "Rome"],
+    "correct": 0,
+    "type": "1"
+  },
+  {
+    "question": "What is the capital of Germany?",
+    "answer": "The capital of Germany is Berlin.",
+    "buttons": ["Paris", "London", "Berlin", "Rome"],
+    "correct": 2,
+    "type": "1"
+  },
+  {
+    "question": "What is the capital of Italy?",
+    "answer": "The capital of Italy is Rome.",
+    "buttons": ["Paris", "London", "Berlin", "Rome"],
+    "correct": 3,
+    "type": "1"
+  },
+  {
+    "question": "What is the capital of Spain?",
+    "answer": "The capital of Spain is Madrid.",
+    "buttons": ["Paris", "London", "Madrid", "Rome"],
+    "correct": 2,
+    "type": "1"
+  },
+  {
+    "question": "What is the capital of the United Kingdom?",
+    "answer": "The capital of the United Kingdom is London.",
+    "buttons": ["Paris", "London", "Berlin", "Rome"],
+    "correct": 1,
+    "type": "1"
+  }
+]
