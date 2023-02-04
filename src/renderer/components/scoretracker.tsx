@@ -9,7 +9,7 @@ const ScoreTracker = () => {
 
   return (
     <div className={styles.scoreMain}>
-      <h1>Score: {score}</h1>
+      <h1>Chuj: {score}</h1>
     </div>
   );
 };
