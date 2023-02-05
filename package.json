@@ -17,7 +17,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/electron-react-boilerplate/electron-react-boilerplate.git"
+    "url": "https://github.com/J3ykob/unseenexpo-interactive-app.git"
   },
   "license": "MIT",
   "main": "./src/main/main.ts",
@@ -33,7 +33,7 @@
     "start:preload": "cross-env NODE_ENV=development TS_NODE_TRANSPILE_ONLY=true webpack --config ./.erb/configs/webpack.config.preload.dev.ts",
     "start:renderer": "cross-env NODE_ENV=development TS_NODE_TRANSPILE_ONLY=true webpack serve --config ./.erb/configs/webpack.config.renderer.dev.ts",
     "test": "jest",
-    "publish": "cross-env GH_TOKEN='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' electron-builder --linux -p always"
+    "publish": "cross-env GH_TOKEN='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' electron-builder -p always"
   },
   "browserslist": [],
   "prettier": {
@@ -116,11 +116,13 @@
       {
         "provider": "github",
         "owner": "J3ykob",
-        "repo": "unseenexpo-interactive-app"
+        "repo": "unseenexpo-interactive-app",
+        "private": true,
+        "releaseType": "release"
       }
     ],
-    "productName": "ElectronReact",
-    "appId": "org.erb.ElectronReact",
+    "productName": "Unseen Expo Interactive App",
+    "appId": "com.unseenexpo.app",
     "asar": true,
     "asarUnpack": "**\\*.{node,dll}",
     "files": [

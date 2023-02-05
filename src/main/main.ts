@@ -20,7 +20,8 @@ class AppUpdater {
     log.transports.file.level = 'info';
     autoUpdater.logger = log;
 
-    autoUpdater.checkForUpdatesAndNotify();
+    // configure auto-updater to work with github releases
+    // private repo: https://github.com/J3ykob/unseenexpo-interactive-app/releases
 
     autoUpdater.on('update-downloaded', (info) => {
       autoUpdater.quitAndInstall();
@@ -36,6 +37,8 @@ class AppUpdater {
         timezone: 'Europe/London',
       }
     );
+
+    autoUpdater.checkForUpdatesAndNotify();
   }
 }
 
