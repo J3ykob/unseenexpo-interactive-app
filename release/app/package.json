@@ -2,6 +2,10 @@
   "name": "unseenexpo-app",
   "version": "0.1.5",
   "description": "Unseen Expo App",
+  "author": {
+    "name": "Jakub Maliszewski",
+    "email": "j.maliszewski@gmail.com"
+  },
   "license": "MIT",
   "main": "./dist/main/main.js",
   "scripts": {
