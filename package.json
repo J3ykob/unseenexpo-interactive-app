@@ -34,7 +34,7 @@
     "start:preload": "cross-env NODE_ENV=development TS_NODE_TRANSPILE_ONLY=true webpack --config ./.erb/configs/webpack.config.preload.dev.ts",
     "start:renderer": "cross-env NODE_ENV=development TS_NODE_TRANSPILE_ONLY=true webpack serve --config ./.erb/configs/webpack.config.renderer.dev.ts",
     "test": "jest",
-    "publish": "cross-env GH_TOKEN='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' electron-builder -p always"
+    "publish": "electron-builder -p always"
   },
   "browserslist": [],
   "prettier": {
