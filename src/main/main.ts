@@ -20,6 +20,10 @@ class AppUpdater {
     log.transports.file.level = 'info';
     autoUpdater.logger = log;
 
+    autoUpdater.autoDownload = true;
+    autoUpdater.autoInstallOnAppQuit = true;
+    console.log(autoUpdater.currentVersion);
+
     // configure auto-updater to work with github releases
     // private repo: https://github.com/J3ykob/unseenexpo-interactive-app/releases
 
@@ -100,8 +104,8 @@ const createWindow = async () => {
         ? path.join(__dirname, 'preload.js')
         : path.join(__dirname, '../../.erb/dll/preload.js'),
     },
-    kiosk: true,
-    alwaysOnTop: true,
+    //kiosk: true,
+    //alwaysOnTop: true,
   });
   mainWindow.setMenu(null);
 
