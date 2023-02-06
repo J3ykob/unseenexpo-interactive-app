@@ -9,7 +9,7 @@ const ScoreTracker = () => {
 
   return (
     <div className={styles.scoreMain}>
-      <h1>Chungus: {score}</h1>
+      <h1>Big Chungus: {score}</h1>
     </div>
   );
 };
