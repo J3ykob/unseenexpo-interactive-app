@@ -29,7 +29,7 @@
   border: none;
   outline: none;
   cursor: pointer;
-  color: black;
+  color: #f5f5f5;
   margin-right: 10px;
   margin-top: 8px;
 }
@@ -57,12 +57,16 @@
   z-index: 20;
 }
 
+.button {
+  pointer-events: all;
+}
+
 .navigatorButtons button {
   background-color: transparent;
   border: none;
   outline: none;
   cursor: pointer;
-  color: black;
+  color: #f5f5f5;
   margin-right: 10px;
 }
 
@@ -93,4 +97,14 @@
   -webkit-transform: rotate(135deg);
   left: 20px;
   top: 50%;
+}
+
+.nextButton {
+  position: absolute;
+  right: 10%;
+  top: 80%;
+  margin-right: 20px;
+  margin-top: -10px;
+  z-index: 20;
+  pointer-events: all;
 }

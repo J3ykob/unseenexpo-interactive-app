@@ -54,9 +54,21 @@ export default function App() {
         setAnswered,
       }}
     >
-      <Navigator maxView={content.length} />
-      <LanguageSelect />
-      <ScoreTracker />
+      <div
+        style={{
+          position: 'absolute',
+          zIndex: 100,
+          top: 0,
+          left: 0,
+          width: '100vw',
+          height: '100vh',
+          pointerEvents: 'none',
+        }}
+      >
+        <Navigator maxView={content.length} />
+        <LanguageSelect />
+        <ScoreTracker />
+      </div>
       {currentView - 1 >= 0
         ? viewController(content[currentView - 1], currentView - 1)
         : null}

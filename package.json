@@ -115,7 +115,7 @@
         "owner": "J3ykob",
         "repo": "unseenexpo-interactive-app",
         "private": true,
-        "releaseType": "draft"
+        "releaseType": "release"
       }
     ],
     "productName": "Unseen Expo Interactive App",

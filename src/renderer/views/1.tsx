@@ -1,4 +1,3 @@
-import ScoreTracker from '../components/scoretracker';
 import { ContextProvider } from 'renderer/context/context';
 import { useContext, useState, useEffect } from 'react';
 import styles from './views.module.css';
@@ -13,10 +12,13 @@ const answerstyle = {
   },
 };
 
-const Hello = ({ question, answer, buttons, correct, index }: any) => {
+const Hello = ({ question, answer, buttons, correct, index, image }: any) => {
   const { score, setScore } = useContext(ContextProvider);
   const { answered, setAnswered } = useContext(ContextProvider);
   const { currentView } = useContext(ContextProvider);
+
+  console.log(image);
+  const img = require(`../../../assets/images/${image}`);
 
   return (
     <div
@@ -36,7 +38,7 @@ const Hello = ({ question, answer, buttons, correct, index }: any) => {
           }`}
         >
           {/* Question */}
-          {question}
+          <img src={img} className={styles.photo} />
         </div>
         <div
           className={`${styles.answer} ${
@@ -44,14 +46,15 @@ const Hello = ({ question, answer, buttons, correct, index }: any) => {
           }`}
         >
           {/* Answer */}
-          {answered[index] !== -1 ? answer : null}
+          {answered[index] !== -1 ? (
+            <p className={styles.answerContent}>{answer}</p>
+          ) : null}
         </div>
       </div>
 
       <div>
         {/* Buttons */}
         {buttons.map((button: string, i: number) => {
-          console.log(answered[index], i, correct);
           return (
             <button
               key={i}
@@ -62,8 +65,8 @@ const Hello = ({ question, answer, buttons, correct, index }: any) => {
                   ? answerstyle.incorrect
                   : {}
               }
+              className={styles.answerButton}
               onClick={() => {
-                console.log(answered);
                 if (answered[index] !== -1) return; // Prevents from changing answer after clicking one (not the best solution
                 setAnswered(
                   answered.map((a, ind) => (ind === currentView ? i : a))

@@ -7,9 +7,11 @@ const ScoreTracker = () => {
   const { currentView, setCurrentView } = useContext(ContextProvider);
   const { language, setLanguage } = useContext(ContextProvider);
 
+  console.log(language);
+
   return (
     <div className={styles.scoreMain}>
-      <h1>Big Chungus: {score}</h1>
+      <h1>Wynik: {score}</h1>
     </div>
   );
 };

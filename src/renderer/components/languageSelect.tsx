@@ -7,8 +7,8 @@ const LanguageSelect = () => {
 
   return (
     <div className={styles.languageMain}>
-      <button> Polski </button>
-      <button> English </button>
+      <button className={styles.button}> Polski </button>
+      <button className={styles.button}> English </button>
     </div>
   );
 };

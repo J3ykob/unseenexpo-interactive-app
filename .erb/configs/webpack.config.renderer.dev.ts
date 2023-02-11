@@ -92,6 +92,18 @@ const configuration: webpack.Configuration = {
       {
         test: /\.(png|jpg|jpeg|gif)$/i,
         type: 'asset/resource',
+        generator: {
+          filename: 'images/[name][ext]',
+        },
+      },
+      // Images in the /assets/images folder
+      {
+        test: /\.(png|jpg|jpeg|gif)$/i,
+        include: path.resolve(webpackPaths.srcRendererPath, 'assets/images'),
+        type: 'asset/resource',
+        generator: {
+          filename: 'images/[name][ext]',
+        },
       },
       // SVG
       {

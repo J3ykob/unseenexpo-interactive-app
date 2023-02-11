@@ -1,36 +1,65 @@
 [
   {
-    "question": "What is the capital of France?",
-    "answer": "The capital of France is Paris.",
-    "buttons": ["Paris", "London", "Berlin", "Rome"],
+    "question": "Czy ta twarz wygląda normalnie?",
+    "answer": "Oglądasz efekt Thatchera. Demonstruje on problemy, jakie mamy z rozpoznawaniem cech twarzy na obrazach widzianych do góry nogami. Pierwszy raz efekt zastosowano na zdjęciu brytyjskiej premier Margaret Thatcher - stąd nazwa.",
+    "buttons": ["Tak", "Nie"],
+    "image": "1.jpg",
+    "correct": 1,
+    "type": "1"
+  },
+  {
+    "question": "W którą stronę obraca się tancerka?",
+    "answer": "Ponieważ obrazek nie posiada głębi możemy dowolnie zmieniać postrzegany kierunek obrotu. Wystarczy wyobrazić sobie, w którą stronę ma obracać się tancerka - podniesiona noga może być zarówno prawą, jak i lewą nogą tancerki.",
+    "buttons": ["Z ruchem wskazówek zegara", "Przeciwnie", "W obu kierunkach"],
+    "image": "2.gif",
+    "correct": 2,
+    "type": "1"
+  },
+  {
+    "question": "Ile nóg ma słoń?",
+    "answer": "Obrazek ten został narysowany po to, żeby zmylić oglądającego. Jedyną nogą, która na pewno należy do słonia, jest lewa tylna noga. Czy pozostałe są nogami, czy nie? Nie da się stwierdzić z pewnością",
+    "buttons": ["4", "8", "Nie wiadomo"],
+    "image": "4.jpg",
+    "correct": 2,
+    "type": "1"
+  },
+  {
+    "question": "Czy na obrazku widać piękną księżniczkę?",
+    "answer": "Tak na obrazku widać piękną księżniczkę! Jeśli jednak obrócimy obraz do góry nogami, to piękna księżniczka zmieni się w brzydala.",
+    "buttons": ["Tak", "Nie"],
+    "image": "5.jpg",
     "correct": 0,
     "type": "1"
   },
   {
-    "question": "What is the capital of Germany?",
-    "answer": "The capital of Germany is Berlin.",
-    "buttons": ["Paris", "London", "Berlin", "Rome"],
-    "correct": 2,
+    "question": "Z którą linią łączy się biała linia?",
+    "answer": "Patrzysz na złudzenie Poggendorffa - z powodu zasłonięcia części lini wydaje nam się, że kąty między liniami a prostokątem są ostrzejsze. Stąd wrażenie, że biała i czerwona linia są połączone.",
+    "buttons": ["Z czerwoną", "Z niebieską"],
+    "image": "6.jpg",
+    "correct": 1,
     "type": "1"
   },
   {
-    "question": "What is the capital of Italy?",
-    "answer": "The capital of Italy is Rome.",
-    "buttons": ["Paris", "London", "Berlin", "Rome"],
-    "correct": 3,
+    "question": "Która zebra stoi z przodu?",
+    "answer": "Dzięki temu, że zebry ozdabia wyjątkowy wzór, niełatwo odróżnić jedną zebrę od drugiej. Jeśli jednak przyjrzymy się uważnie, widać głowę i ogon zebry, która patrzy w lewo. Dzięki temu wiemy, że to ona stoi z przodu.",
+    "buttons": ["Ta po lewej", "Ta po prawej"],
+    "image": "7.jpg",
+    "correct": 1,
     "type": "1"
   },
   {
-    "question": "What is the capital of Spain?",
-    "answer": "The capital of Spain is Madrid.",
-    "buttons": ["Paris", "London", "Madrid", "Rome"],
-    "correct": 2,
+    "question": "Czy na tym obrazku są trójkąty?",
+    "answer": "Na obrazku nie ma żadnego trójkąta. To nasze umysły same instynktownie uzupełniają puste przestrzenie, co sprawia, że widzimy conajmniej dwa trójkąty. To tzn. trójkąt Kanizsa.",
+    "buttons": ["Tak", "Nie"],
+    "image": "8.jpg",
+    "correct": 1,
     "type": "1"
   },
   {
-    "question": "What is the capital of the United Kingdom?",
-    "answer": "The capital of the United Kingdom is London.",
-    "buttons": ["Paris", "London", "Berlin", "Rome"],
+    "question": "Czy to jest spirala?",
+    "answer": "To efekt Frasera, nazywany czasem fałszywą spiralą. W rzeczywistości widzimy wyłącznie okręgi. To przecinający je wzór sprawia, że nasze umysły widzą spirale.",
+    "buttons": ["Tak", "Nie"],
+    "image": "9.jpg",
     "correct": 1,
     "type": "1"
   }
