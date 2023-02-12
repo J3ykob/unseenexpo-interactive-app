@@ -2,11 +2,12 @@ import { ContextProvider } from 'renderer/context/context';
 import { useContext, useEffect, useState } from 'react';
 import styles from './components.module.css';
 
-const Navigator = ({ maxView, nextButtonName }: any) => {
+const Navigator = ({ maxView, nextButtonName, ee }: any) => {
   const { currentView, answered } = useContext(ContextProvider);
   const { setScore, setAnswered, setCurrentView } = useContext(ContextProvider);
 
   const [show, setShow] = useState(false);
+  const [eg, setEe] = ee;
 
   // display a button saying "NEXT" 2 seconds after answered variable changes
   useEffect(() => {
@@ -66,6 +67,12 @@ const Navigator = ({ maxView, nextButtonName }: any) => {
             setAnswered(((ans: number[]) =>
               ans.map(() => -1)) as unknown as number[]);
             setCurrentView(0);
+          }}
+          onTouchStart={() => {
+            setEe([eg[0], eg[1], eg[2] + 1]);
+          }}
+          onTouchEnd={() => {
+            setEe([0, 0, 0]);
           }}
         >
           Restart

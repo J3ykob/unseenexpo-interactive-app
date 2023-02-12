@@ -9,6 +9,8 @@ import { LanguageSelect, ScoreTracker, Navigator } from './components/index';
 import pl from '../../assets/lang/pl.json';
 import en from '../../assets/lang/en.json';
 
+const audio = new Audio(require('../../assets/jp.mp3'));
+
 const returnContent = (language: string): any => {
   if (language === 'pl') return pl;
   if (language === 'en') return en;
@@ -33,6 +35,7 @@ export default function App() {
   const [view, setView] = useState(
     viewController(content.questions[currentView], currentView)
   );
+  const [ee, setEe] = useState([0, 0, 0]);
 
   // when screen is idle for 30 seconds, go to first question
 
@@ -46,6 +49,17 @@ export default function App() {
   useEffect(() => {
     setContent(returnContent(language));
   }, [language]);
+
+  useEffect(() => {
+    // if sum ee >= 3
+
+    if (ee[0] + ee[1] + ee[2] >= 3) {
+      audio.play();
+    } else {
+      console.log(ee);
+      audio.pause();
+    }
+  }, [ee]);
 
   useEffect(() => {
     setView(viewController(content.questions[currentView], currentView));
@@ -77,11 +91,12 @@ export default function App() {
       >
         {currentView > 0 && (
           <Navigator
+            ee={[ee, setEe]}
             maxView={content.questions.length}
             nextButtonName={content.nextButtonName}
           />
         )}
-        <LanguageSelect />
+        <LanguageSelect ee={[ee, setEe]} />
         {currentView > 0 && <ScoreTracker scoreName={content.scoreName} />}
       </div>
       {currentView - 1 >= 0

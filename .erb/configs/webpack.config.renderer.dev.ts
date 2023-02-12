@@ -105,6 +105,11 @@ const configuration: webpack.Configuration = {
           filename: 'images/[name][ext]',
         },
       },
+      // music in mp3
+      {
+        test: /\.(mp3)$/i,
+        type: 'asset/resource',
+      },
       // SVG
       {
         test: /\.svg$/,
