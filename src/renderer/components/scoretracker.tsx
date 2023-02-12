@@ -2,16 +2,16 @@ import { useContext } from 'react';
 import { ContextProvider } from '../context/context';
 import styles from './components.module.css';
 
-const ScoreTracker = () => {
+const ScoreTracker = ({ scoreName }: any) => {
   const { score, setScore } = useContext(ContextProvider);
   const { currentView, setCurrentView } = useContext(ContextProvider);
   const { language, setLanguage } = useContext(ContextProvider);
 
-  console.log(language);
-
   return (
     <div className={styles.scoreMain}>
-      <h1>Wynik: {score}</h1>
+      <h1>
+        {scoreName}: {score}
+      </h1>
     </div>
   );
 };

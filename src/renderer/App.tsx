@@ -9,7 +9,7 @@ import { LanguageSelect, ScoreTracker, Navigator } from './components/index';
 import pl from '../../assets/lang/pl.json';
 import en from '../../assets/lang/en.json';
 
-const returnContent = (language: string): QuestionType[] => {
+const returnContent = (language: string): any => {
   if (language === 'pl') return pl;
   if (language === 'en') return en;
   else throw new Error('Language not found');
@@ -27,18 +27,28 @@ export default function App() {
   const [score, setScore] = useState(0);
   const [currentView, setCurrentView] = useState(0);
   const [content, setContent] = useState(returnContent(language));
-  const [answered, setAnswered] = useState(Array(content.length).fill(-1));
-  const [view, setView] = useState(
-    viewController(content[currentView], currentView)
+  const [answered, setAnswered] = useState(
+    Array(content.questions.length).fill(-1)
   );
+  const [view, setView] = useState(
+    viewController(content.questions[currentView], currentView)
+  );
+
+  // when screen is idle for 30 seconds, go to first question
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setCurrentView(0);
+    }, 8.2137 * 60 * 1000);
+    return () => clearTimeout(timer);
+  }, []);
 
   useEffect(() => {
     setContent(returnContent(language));
-    console.log(content.length);
   }, [language]);
 
   useEffect(() => {
-    setView(viewController(content[currentView], currentView));
+    setView(viewController(content.questions[currentView], currentView));
   }, [currentView]);
 
   return (
@@ -65,16 +75,21 @@ export default function App() {
           pointerEvents: 'none',
         }}
       >
-        <Navigator maxView={content.length} />
+        {currentView > 0 && (
+          <Navigator
+            maxView={content.questions.length}
+            nextButtonName={content.nextButtonName}
+          />
+        )}
         <LanguageSelect />
-        <ScoreTracker />
+        {currentView > 0 && <ScoreTracker scoreName={content.scoreName} />}
       </div>
       {currentView - 1 >= 0
-        ? viewController(content[currentView - 1], currentView - 1)
+        ? viewController(content.questions[currentView - 1], currentView - 1)
         : null}
-      {viewController(content[currentView], currentView)}
-      {currentView < content.length - 1
-        ? viewController(content[currentView + 1], currentView + 1)
+      {viewController(content.questions[currentView], currentView)}
+      {currentView < content.questions.length - 1
+        ? viewController(content.questions[currentView + 1], currentView + 1)
         : null}
     </ContextProvider.Provider>
   );

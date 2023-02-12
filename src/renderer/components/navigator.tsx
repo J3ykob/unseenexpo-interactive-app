@@ -2,7 +2,7 @@ import { ContextProvider } from 'renderer/context/context';
 import { useContext, useEffect, useState } from 'react';
 import styles from './components.module.css';
 
-const Navigator = ({ maxView }: { maxView: number }) => {
+const Navigator = ({ maxView, nextButtonName }: any) => {
   const { currentView, answered } = useContext(ContextProvider);
   const { setScore, setAnswered, setCurrentView } = useContext(ContextProvider);
 
@@ -22,7 +22,7 @@ const Navigator = ({ maxView }: { maxView: number }) => {
         setAnswered(Array(maxView).fill(-1));
         setCurrentView(0);
       }
-    }, 2000);
+    }, 1100);
     return () => clearTimeout(timer);
   }, [answered]);
 
@@ -81,7 +81,7 @@ const Navigator = ({ maxView }: { maxView: number }) => {
           }}
           className={`${styles.nextButton}`}
         >
-          Next
+          {nextButtonName}
         </button>
       )}
 

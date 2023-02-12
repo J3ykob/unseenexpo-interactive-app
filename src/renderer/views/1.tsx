@@ -12,13 +12,24 @@ const answerstyle = {
   },
 };
 
-const Hello = ({ question, answer, buttons, correct, index, image }: any) => {
+const Hello = ({
+  question,
+  answer,
+  buttons,
+  correct,
+  index,
+  image,
+  textpos,
+  answerimage,
+}: any) => {
   const { score, setScore } = useContext(ContextProvider);
   const { answered, setAnswered } = useContext(ContextProvider);
   const { currentView } = useContext(ContextProvider);
 
-  console.log(image);
   const img = require(`../../../assets/images/${image}`);
+  const ansimg = answerimage
+    ? require(`../../../assets/images/${answerimage}`)
+    : null;
 
   return (
     <div
@@ -38,7 +49,10 @@ const Hello = ({ question, answer, buttons, correct, index, image }: any) => {
           }`}
         >
           {/* Question */}
-          <img src={img} className={styles.photo} />
+          <img
+            src={answered[index] !== -1 ? ansimg || img : img}
+            className={styles.photo}
+          />
         </div>
         <div
           className={`${styles.answer} ${
@@ -47,7 +61,12 @@ const Hello = ({ question, answer, buttons, correct, index, image }: any) => {
         >
           {/* Answer */}
           {answered[index] !== -1 ? (
-            <p className={styles.answerContent}>{answer}</p>
+            <p
+              className={styles.answerContent}
+              style={{ marginLeft: textpos + 'px' }}
+            >
+              {answer}
+            </p>
           ) : null}
         </div>
       </div>

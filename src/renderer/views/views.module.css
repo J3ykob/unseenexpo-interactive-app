@@ -1,6 +1,6 @@
 .main {
   width: 100vw;
-  height: 100vh;
+  height: 94vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -48,6 +48,7 @@ button {
   margin-right: 15px;
   min-width: 120px;
   text-align: center;
+  margin-top: 30px;
 }
 
 .question {
@@ -74,7 +75,7 @@ button {
   transform: translateX(25%);
   opacity: 0;
   right: 0;
-  top: 50%;
+  height: 100%;
   width: 100%;
   margin-right: 10%;
   position: absolute;
@@ -97,9 +98,24 @@ button {
   height: 100%;
   width: 30%;
   text-align: center;
-  left: 60%;
+  margin-left: 50px;
+  font-size: 17px;
 }
 
 .photo {
   height: 90%;
+  max-width: 45%;
+  object-fit: contain;
+}
+
+.eightContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  font-size: 16px;
+  width: 80%;
+  /* make spacing between letters */
+  letter-spacing: 0.2em;
 }

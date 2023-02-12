@@ -1,9 +1,105 @@
-[
-  {
-    "question": "What is the capital of France?",
-    "answer": "The capital of France is Paris.",
-    "buttons": ["Paris", "London", "Berlin", "Rome"],
-    "correct": 0,
-    "type": "1"
-  }
-]
+{
+  "questions": [
+    {
+      "welcome": "Welcome the quiz! Try yourself and find out if you can spot all the optical illusions!",
+      "start": "Start!",
+      "type": "start"
+    },
+    {
+      "question": "Does this face look normal?",
+      "answer": "You are seeing the Thatcher effect. It demonstrates the problems we have with the recognition of facial features in images seen upside down. The effect was used first on the photo of the British Prime Minister Margaret Thatcher- hence the name.",
+      "buttons": ["Yes", "No"],
+      "image": "1.jpg",
+      "answerimage": "1a.jpg",
+      "correct": 1,
+      "type": "1"
+    },
+    {
+      "question": "In which direction is the dancer spinnig?",
+      "answer": "Because we don't see the depth in this picture, we can freely change the perceived direction of rotation. We can simply imagine the direction in which dancer should turn- the raised leg can be both the right and the left leg of the dancer.",
+      "buttons": ["Clockwise", "Counterclockwise", "Both"],
+      "image": "2.gif",
+      "textpos": "100",
+      "correct": 2,
+      "type": "1"
+    },
+    {
+      "question": "Try to guess the color of the word as quick as possible",
+      "type": "3",
+      "words": ["Red", "Green", "Blue", "Yellow", "Purple", "White"],
+      "colors": {
+        "Red": "#ff0000",
+        "Green": "#00ff00",
+        "Blue": "#0000ff",
+        "Yellow": "#ffff00",
+        "Purple": "#ff00ff"
+      }
+    },
+    {
+      "question": "How many legs does this elephant have?",
+      "answer": "This picture was drawn in the order to fool the viewer. The only thing that certainly belongs to elephant is the left hid leg. Are the other legs or not? You can’t be sure.",
+      "buttons": ["4", "8", "Can't tell"],
+      "image": "4.jpg",
+      "textpos": "150",
+      "correct": 2,
+      "type": "1"
+    },
+    {
+      "question": "Does this picture show a beautiful princess?",
+      "answer": "Yes, you do see a beautiful princess in the picture. However, if we turn the image upside down, the beautiful will change into an ugly person.",
+      "buttons": ["Yes", "No"],
+      "image": "5.jpg",
+      "answerimage": "5a.jpg",
+      "textpos": "150",
+      "correct": 0,
+      "type": "1"
+    },
+    {
+      "question": "Which line is white line connected to?",
+      "answer": "You see the Poggendorff's illusion. Because you don't see parts of the lines, it seems that the angles between the lines and the rectangle are sharper. Hence the impression that the white and red lines are connected.",
+      "buttons": ["Red Line", "Blue Line"],
+      "image": "6.jpg",
+      "answerimage": "6a.jpg",
+      "correct": 1,
+      "type": "1"
+    },
+    {
+      "question": "Which zebra is in front?",
+      "answer": "Thanks to the unique pattern it's not easy to distinquish one zebra from the other. However if you look carefully, you can see both head and tail of the zebra that looks to the left. Because of that we know that she is standinf in the front.",
+      "buttons": ["On the left", "On the right"],
+      "image": "7.jpg",
+      "answerimage": "7a.jpg",
+      "textpos": "150",
+      "correct": 1,
+      "type": "1"
+    },
+    {
+      "question": "Are there any triangles on this picture?",
+      "answer": "There is no triangle in this picture. Our minds instinctively fill the empty spaces which makes us see at least two triangles. It is so called Kanizsa's triangle.",
+      "buttons": ["Yes", "No"],
+      "image": "8.jpg",
+      "correct": 1,
+      "type": "1"
+    },
+    {
+      "question": "Is this a spiral?",
+      "answer": "What you see is the Fraser's effect, sometimes called a false spiral. In reality what we see are only circles. Because of the pattern layed over the circles our minds can see spirals.",
+      "buttons": ["Yes", "No"],
+      "image": "9.jpg",
+      "answerimage": "9a.jpg",
+      "correct": 1,
+      "type": "1"
+    },
+    {
+      "question": "Find number 8",
+      "type": "2"
+    },
+    {
+      "ending": "Congratulations! You have finished the test.",
+      "scoreMessage": "Your score is: ",
+      "type": "end"
+    }
+  ],
+  "scoreName": "Score",
+  "nextButtonName": "Next"
+}

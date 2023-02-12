@@ -102,7 +102,7 @@
 .nextButton {
   position: absolute;
   right: 10%;
-  top: 80%;
+  bottom: 10%;
   margin-right: 20px;
   margin-top: -10px;
   z-index: 20;
