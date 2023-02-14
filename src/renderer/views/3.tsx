@@ -63,6 +63,7 @@ const Words = ({ question, index, words, colors }: any) => {
               color: Object.values<string>(colors)[color[0]],
               fontSize: '5rem',
               fontWeight: 'bold',
+              pointerEvents: 'none',
             }}
             className={styles.word}
           >

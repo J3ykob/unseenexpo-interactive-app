@@ -68,12 +68,6 @@ const Navigator = ({ maxView, nextButtonName, ee }: any) => {
               ans.map(() => -1)) as unknown as number[]);
             setCurrentView(0);
           }}
-          onTouchStart={() => {
-            setEe([eg[0], eg[1], eg[2] + 1]);
-          }}
-          onTouchEnd={() => {
-            setEe([0, 0, 0]);
-          }}
         >
           Restart
         </button>

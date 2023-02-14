@@ -41,10 +41,13 @@ export default function App() {
 
   useEffect(() => {
     const timer = setTimeout(() => {
+      setScore(0);
+      setAnswered(((ans: number[]) =>
+        ans.map(() => -1)) as unknown as number[]);
       setCurrentView(0);
-    }, 8.2137 * 60 * 1000);
+    }, 5.2137 * 60 * 1000);
     return () => clearTimeout(timer);
-  }, []);
+  }, [score]);
 
   useEffect(() => {
     setContent(returnContent(language));

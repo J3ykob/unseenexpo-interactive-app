@@ -14,7 +14,10 @@ const LanguageSelect = ({ ee }: any) => {
           setLanguage('pl');
         }}
         onTouchStart={() => {
-          setEe([eg[0], eg[1] + 1, eg[2]]);
+          setEe([eg[0], 1, eg[2]]);
+        }}
+        onTouchEnd={() => {
+          setEe([eg[0], 0, eg[2]]);
         }}
       >
         Polski
@@ -25,7 +28,10 @@ const LanguageSelect = ({ ee }: any) => {
           setLanguage('en');
         }}
         onTouchStart={() => {
-          setEe([eg[0] + 1, eg[1], eg[2]]);
+          setEe([1, eg[1], eg[2]]);
+        }}
+        onTouchEnd={() => {
+          setEe([0, eg[1], eg[2]]);
         }}
       >
         English
